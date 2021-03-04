@@ -11,7 +11,11 @@ function writePassword() {
 }
 
 function generatePassword() {
-    var passwordLength = prompt("Please enter the number of characters for your password.");
+    var passwordLength = prompt("Please enter the number of characters for your password(between 8 and 128).");
+    while (passwordLength < 8 || passwordLength > 128) {
+        passwordLength =  prompt("That is not a valid number. Please enter a number between 8 - 128.");
+        }
+
     var lowerConfirm = confirm("Do you want lowercase characters?");
     var upperConfirm = confirm("Do you want uppercase characters?");
     var numericConfirm = confirm("Do you want numeric characters?");
