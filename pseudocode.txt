@@ -1,0 +1,13 @@
+Pseudo code:
+
+need windows confirm to get input for 
+length (between 8 and 128)
+do you want lowercase
+do you want uppercase
+do you want numeric
+do you want special characters
+
+if no character types were selected
+re-ask
+
+
