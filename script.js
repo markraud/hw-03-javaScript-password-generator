@@ -28,13 +28,20 @@ function generatePassword() {
     ",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`",
     "{","|","}","~"];
     
+    var guaranteeChar = [];
+
     var chosenChar = [];
+    var userPassword = [];
+    
 
     if (lowerConfirm == false && upperConfirm == false 
         && numericConfirm == false && specialConfirm == false) {
         alert("Please try again and choose at least 1 character type.");
+        return;
     }   else if (lowerConfirm == true){
         chosenChar = chosenChar.concat(lowerChar);
+        guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  //trying to generate a random lowerChar that will be added to the userPassword
+        console.log(guaranteeChar);                                                                 //then would
     }
 
     if (upperConfirm == true){
@@ -49,7 +56,13 @@ function generatePassword() {
         chosenChar = chosenChar.concat(specChar);
     }
     
-console.log(chosenChar);
+    //for loop to loop over password length and grab random character from the chosenChar array
+    for (i = 0; i < passwordLength; i++) {
+        var randomIndex = Math.floor(Math.random() * chosenChar.length);
+        userPassword.push(chosenChar[randomIndex]);
+        console.log(userPassword);
+    } 
+    
 
 }
 
