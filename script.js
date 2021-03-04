@@ -53,7 +53,6 @@ function writePassword() {
     if (specialConfirm == true){
         chosenChar = chosenChar.concat(specChar);
     }
-
     
     console.log(chosenChar);
 
