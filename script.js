@@ -4,12 +4,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-    //var password = generatePassword();
-    //var passwordText = document.querySelector("#password");
-
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
     
-    //passwordText.value = password;
+    passwordText.value = password;
+}
 
+function generatePassword() {
     var passwordLength = prompt("Please enter the number of characters for your password.");
     var lowerConfirm = confirm("Do you want lowercase characters?");
     var upperConfirm = confirm("Do you want uppercase characters?");
@@ -28,12 +29,6 @@ function writePassword() {
     "{","|","}","~"];
     
     var chosenChar = [];
-
-    //console.log(lowerChar);   
-    //console.log(upperChar);   
-    //console.log(numChar);   
-    //console.log(specChar);   
-
 
     if (lowerConfirm == false && upperConfirm == false 
         && numericConfirm == false && specialConfirm == false) {
@@ -54,7 +49,7 @@ function writePassword() {
         chosenChar = chosenChar.concat(specChar);
     }
     
-    console.log(chosenChar);
+console.log(chosenChar);
 
 }
 
@@ -62,4 +57,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-writePassword();

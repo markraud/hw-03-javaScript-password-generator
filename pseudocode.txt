@@ -10,4 +10,7 @@ do you want special characters
 if no character types were selected
 re-ask
 
+add all types to the ChosenChar array
+
+
 
