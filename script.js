@@ -40,8 +40,8 @@ function generatePassword() {
         return;
     }   else if (lowerConfirm == true){
         chosenChar = chosenChar.concat(lowerChar);
-        guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  //trying to generate a random lowerChar that will be added to the userPassword
-        console.log(guaranteeChar);                                                                 //then would
+        //guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  //trying to generate a random lowerChar that will be added to the userPassword
+        //console.log(guaranteeChar);                                                                 //then would
     }
 
     if (upperConfirm == true){
@@ -63,6 +63,8 @@ function generatePassword() {
         console.log(userPassword);
     } 
     
+    userPassword = userPassword.join("");
+    return userPassword;
 
 }
 
