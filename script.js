@@ -29,31 +29,32 @@ function generatePassword() {
     "{","|","}","~"];
     
     var guaranteeChar = [];
-
     var chosenChar = [];
     var userPassword = [];
     
 
-    if (lowerConfirm == false && upperConfirm == false 
+    if (lowerConfirm == false && upperConfirm == false   //checking for at least one character type
         && numericConfirm == false && specialConfirm == false) {
         alert("Please try again and choose at least 1 character type.");
         return;
     }   else if (lowerConfirm == true){
-        chosenChar = chosenChar.concat(lowerChar);
-        //guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  //trying to generate a random lowerChar that will be added to the userPassword
-        //console.log(guaranteeChar);                                                                 //then would
+        chosenChar = chosenChar.concat(lowerChar);  //adding lowercase charaters to the overall array
+        
+        //trying to generate a random lowerChar that will be added to the userPassword to guarantee at least 1 lowercase
+        //guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  
+        //console.log(guaranteeChar);                                                                 
     }
 
     if (upperConfirm == true){
-        chosenChar = chosenChar.concat(upperChar);
+        chosenChar = chosenChar.concat(upperChar);  //adding uppercase charaters to the overall array
     }
     
     if (numericConfirm == true){
-        chosenChar = chosenChar.concat(numChar);
+        chosenChar = chosenChar.concat(numChar);    //adding numeric charaters to the overall array
     }
     
     if (specialConfirm == true){
-        chosenChar = chosenChar.concat(specChar);
+        chosenChar = chosenChar.concat(specChar);   //adding special charaters to the overall array
     }
     
     //for loop to loop over password length and grab random character from the chosenChar array
