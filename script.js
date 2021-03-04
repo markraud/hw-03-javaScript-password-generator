@@ -74,7 +74,7 @@ function generatePassword() {
         userPassword.push(chosenChar[randomIndex]);
     } 
   
-    //adding the guaranteeChar array ensuring we get one of each type of character
+    //adding the guaranteeChar array ensuring we get one of each type of character if type is requested
     userPassword = userPassword.concat(guaranteeChar); 
     
     //changing userPassword from array to string
