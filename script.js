@@ -43,34 +43,45 @@ function generatePassword() {
         return;
     }   else if (lowerConfirm == true){
         chosenChar = chosenChar.concat(lowerChar);  //adding lowercase charaters to the overall array
-        
-        //trying to generate a random lowerChar that will be added to the userPassword to guarantee at least 1 lowercase
-        //guaranteeChar = guaranteeChar.push(Math.floor(lowerChar[Math.random()*lowerChar.length]));  
-        //console.log(guaranteeChar);                                                                 
+        var randomIndex = Math.floor(Math.random() * lowerChar.length); //generating a random lowercase character for guaranteeChar
+        guaranteeChar = guaranteeChar.concat(lowerChar[randomIndex]);  
     }
 
     if (upperConfirm == true){
         chosenChar = chosenChar.concat(upperChar);  //adding uppercase charaters to the overall array
+        var randomIndex = Math.floor(Math.random() * upperChar.length); //generating a random uppercase character for guaranteeChar
+        guaranteeChar = guaranteeChar.concat(upperChar[randomIndex]);
     }
     
     if (numericConfirm == true){
         chosenChar = chosenChar.concat(numChar);    //adding numeric charaters to the overall array
+        var randomIndex = Math.floor(Math.random() * numChar.length);  //generating a random numeric character for guaranteeChar
+        guaranteeChar = guaranteeChar.concat(numChar[randomIndex]);
     }
     
     if (specialConfirm == true){
         chosenChar = chosenChar.concat(specChar);   //adding special charaters to the overall array
+        var randomIndex = Math.floor(Math.random() * specChar.length);  //generating a random special character for guaranteeChar
+        guaranteeChar = guaranteeChar.concat(specChar[randomIndex]);
     }
     
+    console.log("The passwordLength variable is " + passwordLength);
+    console.log("The guaranteeChar variable is " + guaranteeChar.length);
+
     //for loop to loop over password length and grab random character from the chosenChar array
-    for (i = 0; i < passwordLength; i++) {
+    for (i = 0; i < (passwordLength - guaranteeChar.length); i++) {
         var randomIndex = Math.floor(Math.random() * chosenChar.length);
         userPassword.push(chosenChar[randomIndex]);
-        console.log(userPassword);
     } 
+  
+    //adding the guaranteeChar array ensuring we get one of each type of character
+    userPassword = userPassword.concat(guaranteeChar); 
     
-    userPassword = userPassword.join("");
+    //changing userPassword from array to string
+    userPassword = userPassword.join("");  
+    console.log("The password length is ", userPassword.length);
+    
     return userPassword;
-
 }
 
 // Add event listener to generate button
