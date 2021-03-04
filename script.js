@@ -12,7 +12,7 @@ function writePassword() {
 
 function generatePassword() {
     var passwordLength = prompt("Please enter the number of characters for your password(between 8 and 128).");
-    while (passwordLength < 8 || passwordLength > 128) {
+    while (passwordLength < 8 || passwordLength > 128 || isNaN()) {
         passwordLength =  prompt("That is not a valid number. Please enter a number between 8 - 128.");
         }
 
