@@ -21,7 +21,7 @@ The website is built with HTML, CSS and Javascript.
 
 
 
-#### Screenshots of the site:
+#### Screenshot:
 
 ![top of the site](pass-gen.jpg "Password Generator")
 
