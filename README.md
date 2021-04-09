@@ -25,6 +25,15 @@ The website is built with HTML, CSS and Javascript.
 
 ![top of the site](pass-gen.jpg "Password Generator")
 
+#### Contact Info:
+Built by Mark Raudenbush
+markraud@hotmail.com
+- [My LinkedIn](https://www.linkedin.com/in/markraudenbush)
+- [My GitHub](https://github.com/markraud?tab=stars)
+
+#### License:
+The MIT License (MIT)
+
 #### Summary:
 
 I enjoyed this project and look forward to learning more javascript. 
